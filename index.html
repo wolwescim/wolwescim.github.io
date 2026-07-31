@@ -3,209 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wolwes | Discord Bot Developer</title>
+
+    <title>Wolwes — Personal Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 </head>
-<body>
 
-    <!-- ARKA PLAN SÜZÜLEN PARÇACIKLAR KANVASI -->
-    <canvas id="bg-canvas"></canvas>
+<body data-theme="red">
 
-    <!-- 1. HERO BÖLÜMÜ (İLK BAŞTAKİ BÜYÜK FOTOĞRAF) -->
-    <main class="hero-container">
-        <div class="content">
-            <div class="badge"><i class="fa-solid fa-code"></i> Bot Developer</div>
-            <h1 class="title">Wolwes</h1>
-            <h2 class="subtitle">Discord Bot Developer</h2>
-            <p class="description">Özel Discord botları, otomasyon sistemleri ve gelişmiş altyapılar geliştiriyorum. Yüksek performans ve temiz kod odaklı çalışıyorum.</p>
-            
-            <div class="stats">
-                <div class="stat-card">
-                    <i class="fa-solid fa-server"></i> 
-                    <div>
-                        <h3>50+</h3>
-                        <p>Sunucu</p>
-                    </div>
+<div class="main-wrapper">
+
+    <!-- HERO -->
+    <section class="hero-container">
+
+        <div class="color-picker-wrapper">
+            <span class="picker-label">Tema Rengi:</span>
+
+            <div class="color-dots">
+                <button type="button" class="color-dot active" data-color="red"
+                    style="background-color:#ef4444" title="Kırmızı"></button>
+
+                <button type="button" class="color-dot" data-color="purple"
+                    style="background-color:#a855f7" title="Mor"></button>
+
+                <button type="button" class="color-dot" data-color="blue"
+                    style="background-color:#3b82f6" title="Mavi"></button>
+
+                <button type="button" class="color-dot" data-color="green"
+                    style="background-color:#22c55e" title="Yeşil"></button>
+
+                <button type="button" class="color-dot" data-color="orange"
+                    style="background-color:#f97316" title="Turuncu"></button>
+
+                <button type="button" class="color-dot" data-color="pink"
+                    style="background-color:#ec4899" title="Pembe"></button>
+            </div>
+        </div>
+
+        <div class="hero-content">
+
+            <div class="hero-left">
+
+                <div class="role-badge">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Junior Bot Developer</span>
                 </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-bolt"></i> 
-                    <div>
-                        <h3>%99.9</h3>
-                        <p>Uptime Oranı</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-headset"></i> 
-                    <div>
-                        <h3>7/24</h3>
-                        <p>Aktif Destek</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="avatar-section">
-            <div class="avatar-wrapper">
-                <!-- İLK BAŞTAKİ BÜYÜK FOTOĞRAF -->
-                <img src="https://cdn.discordapp.com/avatars/1040583829607428146/c2b6ed78adf875cb9d2072e298326c81.png?size=256" alt="Wolwes" class="avatar-img hero-avatar">
-            </div>
-        </div>
-    </main>
 
-    <!-- 2. TEKNOLOJİLER -->
-    <section class="section-container">
-        <div class="section-title">
-            <div class="title-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <div>
-                <h2>Teknolojiler</h2>
-                <p>Aktif kullandığım diller ve ortamlar</p>
-            </div>
-        </div>
+                <h1 class="user-title">Wolwes</h1>
 
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <div class="tech-item"><i class="fa-brands fa-node-js" style="color:#5fa04e;"></i><span>Node.js</span></div>
-                <div class="tech-item"><i class="fa-brands fa-js" style="color:#f7df1e;"></i><span>JavaScript</span></div>
-                <div class="tech-item"><i class="fa-brands fa-html5" style="color:#e34f26;"></i><span>HTML5</span></div>
-                <div class="tech-item"><i class="fa-brands fa-python" style="color:#3776ab;"></i><span>Python</span></div>
-                
-                <div class="tech-item"><i class="fa-brands fa-node-js" style="color:#5fa04e;"></i><span>Node.js</span></div>
-                <div class="tech-item"><i class="fa-brands fa-js" style="color:#f7df1e;"></i><span>JavaScript</span></div>
-                <div class="tech-item"><i class="fa-brands fa-html5" style="color:#e34f26;"></i><span>HTML5</span></div>
-                <div class="tech-item"><i class="fa-brands fa-python" style="color:#3776ab;"></i><span>Python</span></div>
-            </div>
-        </div>
-    </section>
+                <h3 class="user-subtitle">
+                    Discord Bot & Web Developer
+                </h3>
 
-    <!-- 3. BENİ BUL -->
-    <section class="section-container">
-        <div class="section-title">
-            <div class="title-icon"><i class="fa-brands fa-discord"></i></div>
-            <div>
-                <h2>Beni Bul</h2>
-                <p>İletişim ve Canlı Durum</p>
-            </div>
-        </div>
+                <p class="user-description">
+                    Discord botları ve web uygulamaları geliştiriyorum.
+                    Kaliteli kod yapısı ve estetik kullanıcı deneyimi önceliğimdir.
+                </p>
 
-        <div class="discord-card-horizontal">
-            <div class="card-banner">
-                <span class="banner-tag"><i class="fa-solid fa-bolt"></i> ONLINE SHOWCASE</span>
-                <div class="banner-badges">
-                    <i class="fa-solid fa-shield-halved" title="Developer"></i>
-                    <i class="fa-solid fa-gem" title="Nitro"></i>
-                </div>
-            </div>
+                <div class="stats-container">
 
-            <div class="card-content-grid">
-                <div class="profile-side">
-                    <div class="avatar-container">
-                        <img src="https://cdn.discordapp.com/avatars/1040583829607428146/c2b6ed78adf875cb9d2072e298326c81.png?size=256" class="discord-avatar" alt="Wolwes Avatar">
-                        <span class="status-indicator dnd"></span>
-                    </div>
-                    <div class="user-info">
-                        <div class="name-line">
-                            <h3>Wolwes</h3>
-                            <span class="dev-tag">BOT DEV</span>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-code"></i>
                         </div>
-                        <span class="user-handle">@wolwes</span>
-                    </div>
 
-                    <div class="social-links-row">
-                        <a href="https://discord.com/users/1040583829607428146" target="_blank" class="square-btn" title="Discord Profilim">
-                            <i class="fa-brands fa-discord"></i>
-                        </a>
-                        <a href="https://github.com/wolwescim" target="_blank" class="square-btn" title="GitHub Profilim">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="info-side">
-                    <div class="status-quote">
-                        <i class="fa-solid fa-quote-left"></i>
-                        <span>Herkes her şeyin bedelini öder.</span>
-                    </div>
-
-                    <div class="bio-box">
-                        <span class="box-title">HAKKINDA</span>
-                        <p>Discord Bot Developer & Wolwes Community Owner</p>
-                        <a href="https://wolwes.js.org" target="_blank" class="website-link">www.wolwes.js.org</a>
-                    </div>
-
-                    <div class="spotify-card">
-                        <div class="spotify-top">
-                            <i class="fa-brands fa-spotify"></i>
-                            <span>CANLI SPOTIFY</span>
-                        </div>
-                        <div class="spotify-body">
-                            <div class="track-details">
-                                <span class="track-title">Yükleniyor...</span>
-                                <span class="track-artist">...</span>
-                                <div class="progress-bar"><div class="progress-fill"></div></div>
-                                <div class="track-time"><span>0:00</span><span>0:00</span></div>
-                            </div>
+                        <div class="stat-info">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Projeler</span>
                         </div>
                     </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Botlar</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Yıl Deneyim</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <div class="hero-right">
+
+                <div class="avatar-frame">
+
+                    <img
+                        src="https://i.pinimg.com/564x/2c/3e/71/2c3e7178cf53a298a005611cf746e507.jpg"
+                        alt="Wolwes Avatar"
+                        class="hero-avatar"
+                    >
+
+                    <span
+                        class="status-indicator offline"
+                        title="Discord Durumu"
+                    ></span>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- 4. SIKÇA SORULAN SORULAR -->
+
+    <!-- DISCORD -->
+    <section class="discord-card">
+
+        <div class="discord-banner">
+            <div class="banner-overlay-text">
+                Gözler İhanet Etmez
+            </div>
+        </div>
+
+
+        <div class="discord-profile-header">
+
+            <div class="discord-avatar-container">
+
+                <img
+                    src="https://i.pinimg.com/564x/2c/3e/71/2c3e7178cf53a298a005611cf746e507.jpg"
+                    class="profile-avatar-img"
+                    alt="Wolwes Avatar"
+                >
+
+                <span class="status-indicator offline"></span>
+
+            </div>
+
+
+            <div class="profile-info-row">
+
+                <div class="name-badge-group">
+
+                    <h2>Wolwes</h2>
+
+                    <span class="vodo-badge">
+                        BOT DEV
+                    </span>
+
+                </div>
+
+
+                <div class="status-tag">
+
+                    <span class="username">
+                        @wolwescim
+                    </span>
+
+                    <span class="status-text">
+                        <i class="fa-solid fa-circle"></i>
+                        Bağlanıyor...
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOM STATUS -->
+
+        <div class="custom-status-box">
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            <span>
+                "Herkes her şeyin bedelini öder."
+            </span>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="discord-section">
+
+            <h4>HAKKINDA</h4>
+
+            <p class="about-text">
+                Wessel, Noname, Soull ♥
+            </p>
+
+            <a
+                href="https://wolwes.js.org"
+                target="_blank"
+                class="highlight-link"
+            >
+                www.wolwes.js.org
+            </a>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <div class="discord-section">
+
+            <h4>BAĞLANTILAR</h4>
+
+            <div class="links-grid">
+
+                <a
+                    href="https://discord.com/users/1040583829607428146"
+                    target="_blank"
+                    class="link-btn"
+                >
+                    <i class="fa-brands fa-discord"></i>
+                    @wolwescim
+                </a>
+
+                <a
+                    href="https://github.com/wolwescim"
+                    target="_blank"
+                    class="link-btn"
+                >
+                    <i class="fa-brands fa-github"></i>
+                    wolwescim
+                </a>
+
+                <a
+                    href="https://wolwes.js.org"
+                    target="_blank"
+                    class="link-btn active-link"
+                >
+                    <i class="fa-solid fa-globe"></i>
+                    wolwescim
+                </a>
+
+                <a
+                    href="mailto:info@wolwes.js.org"
+                    class="link-btn"
+                >
+                    <i class="fa-solid fa-envelope"></i>
+                    info@wolwes.js.org
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPOTIFY -->
+
+        <div class="activity-box spotify-box">
+
+            <div class="activity-title">
+
+                <i class="fa-brands fa-spotify spotify-icon"></i>
+
+                SPOTIFY
+
+                <span id="spotify-status-dot" class="live-dot"></span>
+
+            </div>
+
+            <div
+                id="spotify-activity"
+                class="activity-desc"
+            >
+                Spotify kontrol ediliyor...
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVITY -->
+
+        <div class="activity-box game-box">
+
+            <div class="activity-title">
+
+                <i class="fa-solid fa-gamepad game-icon"></i>
+
+                AKTİVİTE
+
+                <span id="activity-status-dot" class="live-dot"></span>
+
+            </div>
+
+            <div
+                id="game-activity"
+                class="activity-desc"
+            >
+                Aktivite kontrol ediliyor...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGIES -->
+
     <section class="section-container">
-        <div class="section-title">
-            <div class="title-icon"><i class="fa-solid fa-circle-question"></i></div>
+
+        <div class="section-title-box">
+
+            <div class="section-icon">
+                <i class="fa-solid fa-fire"></i>
+            </div>
+
             <div>
-                <h2>Sıkça Sorulan Sorular</h2>
-                <p>Merak edebileceğiniz bazı detaylar</p>
-            </div>
-        </div>
+                <h3>Teknolojiler</h3>
 
-        <div class="faq-accordion">
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Özel bir Discord botu yaptırabilir miyim?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Evet! Sunucunuza özel sistemler, kayıt botları, ekonomi, moderasyon veya API entegrasyonlu her türlü Discord botunu sıfırdan geliştiriyorum.</p>
-                </div>
+                <p>
+                    Kullandığım diller ve geliştirme araçları
+                </p>
             </div>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Hangi dilleri ve kütüphaneleri kullanıyorsun?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Ana odağım Node.js (Discord.js) ve Python (Discord.py) altyapılarıdır. Veritabanı tarafında ise MongoDB ve Quick.db tercih ediyorum.</p>
-                </div>
-            </div>
         </div>
+
+
+        <div class="tech-grid">
+
+            <a
+                href="https://nodejs.org/"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-brands fa-node-js"></i>
+                <span>Node.js</span>
+            </a>
+
+            <a
+                href="https://www.python.org/"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+            </a>
+
+            <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML5</span>
+            </a>
+
+            <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS3</span>
+            </a>
+
+            <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </a>
+
+            <a
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                class="tech-item"
+            >
+                <span class="ts-text">TS</span>
+                <span>TypeScript</span>
+            </a>
+
+            <a
+                href="https://www.mongodb.com/"
+                target="_blank"
+                class="tech-item"
+            >
+                <i class="fa-solid fa-database"></i>
+                <span>MongoDB</span>
+            </a>
+
+        </div>
+
     </section>
 
-    <!-- 5. FOOTER (EN ALTTAKİ SOL TARAF) -->
-    <footer class="footer">
+
+    <!-- PROJECTS -->
+
+    <section class="section-container">
+
+        <div class="section-header-flex">
+
+            <div class="section-title-box">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Projelerim
+                        <span class="count-badge">(5)</span>
+                    </h3>
+
+                    <p>
+                        GitHub'daki açık kaynak projelerim
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                href="https://github.com/wolwescim"
+                target="_blank"
+                class="see-all-btn"
+            >
+                Tümünü gör
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <a
+                href="https://github.com/wolwescim/discord-welcome-bot"
+                target="_blank"
+                class="project-card"
+            >
+                <div class="project-header">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>discord-welcome-bot</h4>
+                </div>
+
+                <p class="project-desc">
+                    Discord Kayıt Ses Botları
+                </p>
+
+                <div class="project-footer">
+                    <span class="lang-tag">
+                        <span class="lang-color ts"></span>
+                        TypeScript
+                    </span>
+
+                    <div class="stats-group">
+                        <span>
+                            <i class="fa-regular fa-star"></i>
+                            6
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code-fork"></i>
+                            0
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+
+            <a
+                href="https://github.com/wolwescim/Discord-Guild-Copy"
+                target="_blank"
+                class="project-card"
+            >
+                <div class="project-header">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>Discord-Guild-Copy</h4>
+                </div>
+
+                <p class="project-desc">
+                    Discord Yetkisiz Sunucu Kopyalama Sistemi
+                </p>
+
+                <div class="project-footer">
+                    <span class="lang-tag">
+                        <span class="lang-color py"></span>
+                        Python
+                    </span>
+
+                    <div class="stats-group">
+                        <span>
+                            <i class="fa-regular fa-star"></i>
+                            5
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code-fork"></i>
+                            2
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+
+            <a
+                href="https://github.com/wolwescim/token-manager"
+                target="_blank"
+                class="project-card"
+            >
+                <div class="project-header">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>token-manager</h4>
+                </div>
+
+                <p class="project-desc">
+                    Discord Token Yönetim Sistemi
+                </p>
+
+                <div class="project-footer">
+                    <span class="lang-tag">
+                        <span class="lang-color js"></span>
+                        JavaScript
+                    </span>
+
+                    <div class="stats-group">
+                        <span>
+                            <i class="fa-regular fa-star"></i>
+                            4
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code-fork"></i>
+                            1
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+
+            <a
+                href="https://github.com/wolwescim/discord-voice-register"
+                target="_blank"
+                class="project-card"
+            >
+                <div class="project-header">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>discord-voice-register</h4>
+                </div>
+
+                <p class="project-desc">
+                    Discord Sesli Kayıt Botu
+                </p>
+
+                <div class="project-footer">
+                    <span class="lang-tag">
+                        <span class="lang-color ts"></span>
+                        TypeScript
+                    </span>
+
+                    <div class="stats-group">
+                        <span>
+                            <i class="fa-regular fa-star"></i>
+                            3
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code-fork"></i>
+                            0
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+
+            <a
+                href="https://github.com/wolwescim/msp-friend-cleaner"
+                target="_blank"
+                class="project-card"
+            >
+                <div class="project-header">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>msp-friend-cleaner</h4>
+                </div>
+
+                <p class="project-desc">
+                    MovieStarPlanet Oyunu'nda Kolayca Arkadaş Listesi Temizleme
+                </p>
+
+                <div class="project-footer">
+
+                    <span class="lang-tag">
+                        <span class="lang-color ts"></span>
+                        TypeScript
+                    </span>
+
+                    <div class="stats-group">
+
+                        <span>
+                            <i class="fa-regular fa-star"></i>
+                            2
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-code-fork"></i>
+                            1
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
         <div class="footer-left">
-            <!-- EN ALT SOL KISIMDAKİ LOGO GÖRSELİ -->
-            <img src="https://cdn.discordapp.com/avatars/1040583829607428146/c2b6ed78adf875cb9d2072e298326c81.png?size=256" alt="Wolwes Logo" class="footer-logo-img">
-            <div>
-                <h4>Wolwes</h4>
-                <p>Discord Bot Developer</p>
+
+            <div class="footer-avatar">
+                W
             </div>
+
+            <div>
+
+                <div class="footer-name">
+                    Wolwes
+                    <span class="footer-dot">•</span>
+
+                    <a
+                        href="https://wolwes.js.org"
+                        class="footer-link"
+                    >
+                        wolwes.js.org
+                    </a>
+                </div>
+
+                <div class="footer-sub">
+                    Junior Bot Dev — Developed ❤️ By Wolwes
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="footer-center">
-            <a href="https://discord.com/users/1040583829607428146" target="_blank"><i class="fa-brands fa-discord"></i></a>
-            <a href="https://github.com/wolwescim" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+        <div class="footer-socials">
+
+            <a
+                href="https://discord.com/users/1040583829607428146"
+                target="_blank"
+            >
+                <i class="fa-brands fa-discord"></i>
+            </a>
+
+            <a
+                href="https://github.com/wolwescim"
+                target="_blank"
+            >
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="mailto:info@wolwes.js.org">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
         </div>
 
-        <div class="footer-right">
-            <p>© 2026 Wolwes • wolwes.js.org</p>
-            <small>Developed with <i class="fa-solid fa-heart" style="color:#3b82f6;"></i> by Wolwes</small>
+
+        <div class="footer-copyright">
+            © 2026 Wolwes
         </div>
+
     </footer>
 
-    <script src="script.js"></script>
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
