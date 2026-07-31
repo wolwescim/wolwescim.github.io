@@ -11,19 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // TEMA
     // =========================================================
 
-    const colorDots = document.querySelectorAll('.color-dot');
+    const colorDots =
+        document.querySelectorAll('.color-dot');
+
 
     colorDots.forEach(dot => {
 
         dot.addEventListener('click', () => {
 
-            colorDots.forEach(d => {
-                d.classList.remove('active');
+            colorDots.forEach(item => {
+                item.classList.remove('active');
             });
 
             dot.classList.add('active');
 
-            const selectedTheme = dot.dataset.color;
+            const selectedTheme =
+                dot.dataset.color;
 
             document.body.setAttribute(
                 'data-theme',
@@ -36,33 +39,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================================================
-    // HTML ELEMENTLERİ
+    // ELEMENTLER
     // =========================================================
 
     const spotifyElement =
-        document.getElementById('spotify-activity');
+        document.getElementById(
+            'spotify-activity'
+        );
 
     const gameElement =
-        document.getElementById('game-activity');
+        document.getElementById(
+            'game-activity'
+        );
 
     const spotifyDot =
-        document.getElementById('spotify-status-dot');
+        document.getElementById(
+            'spotify-status-dot'
+        );
 
     const activityDot =
-        document.getElementById('activity-status-dot');
+        document.getElementById(
+            'activity-status-dot'
+        );
 
     const statusText =
-        document.querySelector('.status-text');
+        document.querySelector(
+            '.status-text'
+        );
 
     const statusIndicators =
-        document.querySelectorAll('.status-indicator');
+        document.querySelectorAll(
+            '.status-indicator'
+        );
 
     const customStatusElement =
-        document.querySelector('.custom-status-box span');
+        document.querySelector(
+            '.custom-status-box span'
+        );
 
 
     // =========================================================
-    // DURUM RENKLERİ
+    // DISCORD DURUMLARI
     // =========================================================
 
     const statusMap = {
@@ -100,16 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateAvatar(presence) {
 
-        const user = presence?.discord_user;
+        const user =
+            presence?.discord_user;
+
 
         if (!user || !user.avatar) {
             return;
         }
 
+
         const extension =
             user.avatar.startsWith('a_')
                 ? 'gif'
                 : 'png';
+
 
         const avatarUrl =
             `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${user.avatar}.${extension}?size=512`;
@@ -129,14 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================================================
-    // DISCORD DURUMU
+    // DURUM
     // =========================================================
 
     function updateStatus(presence) {
 
         const status =
-            statusMap[presence?.discord_status]
-            || statusMap.offline;
+            statusMap[
+                presence?.discord_status
+            ] || statusMap.offline;
 
 
         statusIndicators.forEach(indicator => {
@@ -185,15 +207,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isListening) {
 
             const song =
-                escapeHtml(spotify.song || 'Bilinmeyen şarkı');
+                escapeHtml(
+                    spotify.song ||
+                    'Bilinmeyen şarkı'
+                );
+
 
             const artist =
-                escapeHtml(spotify.artist || 'Bilinmeyen sanatçı');
+                escapeHtml(
+                    spotify.artist ||
+                    'Bilinmeyen sanatçı'
+                );
+
 
             spotifyElement.innerHTML = `
+
                 <div class="spotify-playing">
 
                     <div class="spotify-song">
+
                         <span class="spotify-listening">
                             Şu an dinliyor
                         </span>
@@ -201,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <strong>
                             ${song}
                         </strong>
+
                     </div>
 
                     <div class="spotify-artist">
@@ -208,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                 </div>
+
             `;
 
 
@@ -217,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else {
 
-            spotifyElement.innerHTML =
+            spotifyElement.textContent =
                 'Şu an bir şey dinlemiyor';
 
 
@@ -242,21 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const activities =
-            Array.isArray(presence?.activities)
+            Array.isArray(
+                presence?.activities
+            )
                 ? presence.activities
                 : [];
-
-
-        /*
-            Discord activity türleri:
-
-            0 = Playing
-            1 = Streaming
-            2 = Listening
-            3 = Watching
-            4 = Custom Status
-            5 = Competing
-        */
 
 
         const gameActivity =
@@ -277,10 +301,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             if (activityDot) {
-                activityDot.classList.remove('active');
+                activityDot.classList.remove(
+                    'active'
+                );
             }
 
             return;
+
         }
 
 
@@ -291,7 +318,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             html += `
                 <strong>
-                    ${escapeHtml(gameActivity.name)}
+                    ${escapeHtml(
+                        gameActivity.name
+                    )}
                 </strong>
             `;
 
@@ -302,7 +331,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             html += `
                 <span>
-                    — ${escapeHtml(gameActivity.details)}
+                    — ${escapeHtml(
+                        gameActivity.details
+                    )}
                 </span>
             `;
 
@@ -313,7 +344,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             html += `
                 <div class="activity-state">
-                    ${escapeHtml(gameActivity.state)}
+                    ${escapeHtml(
+                        gameActivity.state
+                    )}
                 </div>
             `;
 
@@ -325,7 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (activityDot) {
-            activityDot.classList.add('active');
+            activityDot.classList.add(
+                'active'
+            );
         }
 
     }
@@ -343,14 +378,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const activities =
-            Array.isArray(presence?.activities)
+            Array.isArray(
+                presence?.activities
+            )
                 ? presence.activities
                 : [];
 
 
         const customStatus =
             activities.find(
-                activity => activity.type === 4
+                activity =>
+                    activity.type === 4
             );
 
 
@@ -373,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================================================
-    // TÜM VERİYİ GÜNCELLE
+    // TÜM PRESENCE
     // =========================================================
 
     function updatePresenceData(presence) {
@@ -403,37 +441,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================================================
-    // HTML GÜVENLİK
+    // HTML GÜVENLİĞİ
     // =========================================================
 
     function escapeHtml(value) {
 
         return String(value)
-            .replaceAll('&', '&amp;')
-            .replaceAll('<', '&lt;')
-            .replaceAll('>', '&gt;')
-            .replaceAll('"', '&quot;')
-            .replaceAll("'", '&#039;');
+
+            .replaceAll(
+                '&',
+                '&amp;'
+            )
+
+            .replaceAll(
+                '<',
+                '&lt;'
+            )
+
+            .replaceAll(
+                '>',
+                '&gt;'
+            )
+
+            .replaceAll(
+                '"',
+                '&quot;'
+            )
+
+            .replaceAll(
+                "'",
+                '&#039;'
+            );
 
     }
 
 
     // =========================================================
-    // LANYARD REST API
+    // LANYARD REST
     // =========================================================
 
     async function fetchInitialData() {
 
         try {
 
-            console.log(
-                'Lanyard REST bağlantısı kuruluyor...'
-            );
-
-
             const response =
                 await fetch(
-                    `https://api.lanyard.rest/v1/users/${DISCORD_ID}`
+                    `https://api.lanyard.rest/v1/users/${DISCORD_ID}`,
+                    {
+                        cache: 'no-store'
+                    }
                 );
 
 
@@ -450,12 +506,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 await response.json();
 
 
-            console.log(
-                'Lanyard REST sonucu:',
-                json
-            );
-
-
             if (
                 json.success &&
                 json.data
@@ -463,12 +513,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 updatePresenceData(
                     json.data
-                );
-
-            } else {
-
-                console.error(
-                    'Lanyard kullanıcı verisi bulunamadı.'
                 );
 
             }
@@ -491,12 +535,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let heartbeatInterval = null;
 
+    let reconnectTimer = null;
+
 
     function connectLanyard() {
 
-        console.log(
-            'Lanyard WebSocket bağlanıyor...'
-        );
+        if (reconnectTimer) {
+
+            clearTimeout(
+                reconnectTimer
+            );
+
+            reconnectTimer = null;
+
+        }
 
 
         const socket =
@@ -516,11 +568,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 socket.send(
                     JSON.stringify({
+
                         op: 2,
+
                         d: {
                             subscribe_to_id:
                                 DISCORD_ID
                         }
+
                     })
                 );
 
@@ -535,16 +590,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
 
                     const data =
-                        JSON.parse(event.data);
+                        JSON.parse(
+                            event.data
+                        );
 
 
                     // HELLO
                     if (data.op === 1) {
 
                         if (heartbeatInterval) {
+
                             clearInterval(
                                 heartbeatInterval
                             );
+
                         }
 
 
@@ -571,7 +630,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
 
-                    // PRESENCE
                     if (
                         data.t === 'INIT_STATE' ||
                         data.t === 'PRESENCE_UPDATE'
@@ -601,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
             () => {
 
                 console.warn(
-                    'Lanyard WebSocket kapandı. Yeniden bağlanılıyor...'
+                    'Lanyard WebSocket kapandı.'
                 );
 
 
@@ -611,15 +669,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         heartbeatInterval
                     );
 
-                    heartbeatInterval = null;
+                    heartbeatInterval =
+                        null;
 
                 }
 
 
-                setTimeout(
-                    connectLanyard,
-                    3000
-                );
+                reconnectTimer =
+                    setTimeout(
+                        connectLanyard,
+                        3000
+                    );
 
             }
         );
@@ -641,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // =========================================================
-    // BAŞLAT
+    // İLK LANYARD BAĞLANTISI
     // =========================================================
 
     fetchInitialData();
@@ -650,71 +710,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// =========================================================
-// AÇILIŞ ANİMASYONU
-// =========================================================
+
+// =============================================================
+// LOADING ANİMASYONU
+// =============================================================
 
 function startLoadingAnimation() {
 
-    const loadingScreen =
-        document.getElementById('loading-screen');
+    const screen =
+        document.getElementById(
+            'loading-screen'
+        );
 
     const progress =
-        document.querySelector('.loading-progress');
+        document.querySelector(
+            '.loading-progress'
+        );
 
     const percent =
-        document.getElementById('loading-percent');
+        document.getElementById(
+            'loading-percent'
+        );
 
 
-    if (!loadingScreen || !progress || !percent) {
+    if (
+        !screen ||
+        !progress ||
+        !percent
+    ) {
+
+        startCodingAnimations();
+
         return;
+
     }
 
 
     let value = 0;
 
 
-    const interval = setInterval(() => {
+    const interval =
+        setInterval(() => {
 
-        value += Math.floor(
-            Math.random() * 8
-        ) + 3;
-
-
-        if (value >= 100) {
-
-            value = 100;
-
-            clearInterval(interval);
+            value +=
+                Math.floor(
+                    Math.random() * 8
+                ) + 4;
 
 
-            setTimeout(() => {
+            if (value >= 100) {
 
-                loadingScreen.classList.add(
-                    'hidden'
+                value = 100;
+
+                clearInterval(
+                    interval
                 );
 
-                startCodingAnimations();
 
-            }, 400);
+                setTimeout(() => {
 
-        }
+                    screen.classList.add(
+                        'hidden'
+                    );
+
+                    startCodingAnimations();
+
+                }, 350);
+
+            }
 
 
-        progress.style.width =
-            `${value}%`;
+            progress.style.width =
+                `${value}%`;
 
-        percent.textContent =
-            value;
+            percent.textContent =
+                value;
 
-    }, 70);
+        }, 65);
 
 }
 
 
-// =========================================================
-// KODLAMA YÜZDE ANİMASYONU
-// =========================================================
+// =============================================================
+// KODLAMA BARLARI
+// =============================================================
 
 function startCodingAnimations() {
 
@@ -724,27 +803,31 @@ function startCodingAnimations() {
         );
 
 
-    bars.forEach((bar, index) => {
+    bars.forEach(
+        (bar, index) => {
 
-        const width =
-            bar.dataset.width || 0;
+            const width =
+                Number(
+                    bar.dataset.width
+                ) || 0;
 
 
-        setTimeout(() => {
+            setTimeout(() => {
 
-            bar.style.width =
-                `${width}%`;
+                bar.style.width =
+                    `${width}%`;
 
-        }, index * 120);
+            }, index * 120);
 
-    });
+        }
+    );
 
 }
 
 
-// =========================================================
+// =============================================================
 // GERÇEK ZİYARETÇİ SAYACI
-// =========================================================
+// =============================================================
 
 async function updateVisitorCounter() {
 
@@ -761,23 +844,20 @@ async function updateVisitorCounter() {
 
     try {
 
-        /*
-         * CounterAPI ücretsiz ziyaretçi sayacı.
-         *
-         * Aynı URL'ye her ziyaret geldiğinde
-         * counter otomatik olarak +1 olur.
-         */
-
         const response =
             await fetch(
-                'https://api.counterapi.dev/v1/wolwes-portfolio/visits/up'
+                'https://api.counterapi.dev/v1/wolwes-portfolio/visits/up',
+                {
+                    method: 'GET',
+                    cache: 'no-store'
+                }
             );
 
 
         if (!response.ok) {
 
             throw new Error(
-                `HTTP ${response.status}`
+                `Counter API HTTP ${response.status}`
             );
 
         }
@@ -787,13 +867,22 @@ async function updateVisitorCounter() {
             await response.json();
 
 
+        console.log(
+            'Visitor Counter:',
+            data
+        );
+
+
         if (
             data &&
-            typeof data.count !== 'undefined'
+            typeof data.count !==
+                'undefined'
         ) {
 
             counter.textContent =
-                Number(data.count).toLocaleString(
+                Number(
+                    data.count
+                ).toLocaleString(
                     'tr-TR'
                 );
 
@@ -820,10 +909,17 @@ async function updateVisitorCounter() {
 }
 
 
-// =========================================================
+// =============================================================
 // BAŞLAT
-// =========================================================
+// =============================================================
 
-startLoadingAnimation();
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
 
-updateVisitorCounter();
+        startLoadingAnimation();
+
+        updateVisitorCounter();
+
+    }
+);
