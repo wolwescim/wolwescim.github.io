@@ -609,3 +609,361 @@ body {
 .spotify-box:hover {
     border-color: rgba(34, 197, 94, 0.5);
 }
+/* =========================================================
+   AÇILIŞ ANİMASYONU
+   ========================================================= */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #09090b;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-content {
+    width: min(400px, 85vw);
+    text-align: center;
+}
+
+.loading-logo {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+    background: var(--accent-main);
+
+    color: #ffffff;
+
+    font-family: monospace;
+    font-size: 26px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 35px var(--accent-glow);
+
+    animation: loadingLogoPulse 1.5s ease-in-out infinite;
+}
+
+.loading-name {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ffffff;
+}
+
+.loading-text {
+    margin-top: 8px;
+
+    color: #71717a;
+
+    font-size: 13px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #27272a;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--accent-main);
+
+    box-shadow:
+        0 0 12px var(--accent-glow);
+
+    transition: width 0.15s ease;
+}
+
+.loading-percent {
+    margin-top: 10px;
+
+    color: #a1a1aa;
+
+    font-family: monospace;
+    font-size: 12px;
+}
+
+@keyframes loadingLogoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* =========================================================
+   KODLAMA YÜZDELERİ
+   ========================================================= */
+
+.coding-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+.coding-item {
+    width: 100%;
+}
+
+.coding-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    color: #e4e4e7;
+
+    font-size: 14px;
+}
+
+.coding-top span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.coding-top i {
+    width: 18px;
+
+    color: var(--accent-main);
+
+    font-size: 17px;
+}
+
+.coding-top strong {
+    color: var(--accent-main);
+
+    font-size: 13px;
+}
+
+.coding-ts {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 4px;
+
+    background: var(--accent-main);
+
+    color: white;
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.coding-bar {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #27272a;
+}
+
+.coding-progress {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--accent-main);
+
+    box-shadow:
+        0 0 10px var(--accent-glow);
+
+    transition:
+        width 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================================
+   ZİYARETÇİ SAYACI
+   ========================================================= */
+
+.visitor-section {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.visitor-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.visitor-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--accent-glow);
+}
+
+.visitor-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: var(--accent-soft);
+
+    color: var(--accent-main);
+
+    font-size: 18px;
+}
+
+.visitor-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.visitor-label {
+    color: #71717a;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.visitor-info strong {
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.visitor-live {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-left: auto;
+
+    color: #71717a;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.visitor-live span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 8px rgba(34, 197, 94, 0.8);
+
+    animation: visitorPulse 1.5s infinite;
+}
+
+@keyframes visitorPulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBİL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .visitor-card {
+        padding: 15px;
+    }
+
+    .visitor-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .coding-list {
+        gap: 18px;
+    }
+
+}
