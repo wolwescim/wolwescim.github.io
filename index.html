@@ -1,861 +1,1306 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Wolwes</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- FAVICON -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="favicon.svg"
+    >
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-    <!-- Font Awesome -->
+    <!-- FONT AWESOME -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     >
+
 </head>
+
 
 <body data-theme="red">
 
-<div class="main-wrapper">
 
     <!-- =====================================================
-         HERO
+         LOADING SCREEN
          ===================================================== -->
 
-    <section class="hero-container">
+    <div id="loading-screen">
 
-        <div class="color-picker-wrapper">
+        <div class="loading-content">
 
-            <span class="picker-label">
-                Tema Rengi:
-            </span>
+            <div class="loading-logo">
+                &lt;/&gt;
+            </div>
 
-            <div class="color-dots">
+            <div class="loading-name">
+                WOLWES
+            </div>
 
-                <button
-                    type="button"
-                    class="color-dot active"
-                    data-color="red"
-                    style="background-color:#ef4444"
-                    title="Kırmızı">
-                </button>
+            <div class="loading-text">
+                Sayfa Yükleniyor...
+            </div>
 
-                <button
-                    type="button"
-                    class="color-dot"
-                    data-color="purple"
-                    style="background-color:#a855f7"
-                    title="Mor">
-                </button>
+            <div class="loading-bar">
 
-                <button
-                    type="button"
-                    class="color-dot"
-                    data-color="blue"
-                    style="background-color:#3b82f6"
-                    title="Mavi">
-                </button>
-
-                <button
-                    type="button"
-                    class="color-dot"
-                    data-color="green"
-                    style="background-color:#22c55e"
-                    title="Yeşil">
-                </button>
-
-                <button
-                    type="button"
-                    class="color-dot"
-                    data-color="orange"
-                    style="background-color:#f97316"
-                    title="Turuncu">
-                </button>
-
-                <button
-                    type="button"
-                    class="color-dot"
-                    data-color="pink"
-                    style="background-color:#ec4899"
-                    title="Pembe">
-                </button>
+                <div class="loading-progress"></div>
 
             </div>
+
+            <div class="loading-percent">
+
+                <span id="loading-percent">
+                    0
+                </span>%
+
+            </div>
+
         </div>
 
-
-        <div class="hero-content">
-
-            <div class="hero-left">
-
-                <div class="role-badge">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <span>Junior Bot Developer</span>
-                </div>
-
-                <h1 class="user-title">
-                    Wolwes
-                </h1>
-
-                <h3 class="user-subtitle">
-                    Discord Bot Developer
-                </h3>
-
-                <p class="user-description">
-                    Discord botları geliştiriyorum.
-                    Kaliteli kod yapısı ve estetik kullanıcı deneyimi önceliğimdir.
-                </p>
+    </div>
 
 
-                <div class="stats-container">
 
-                    <div class="stat-card">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-
-                        <div class="stat-info">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Projeler</span>
-                        </div>
-
-                    </div>
+    <div class="main-wrapper">
 
 
-                    <div class="stat-card">
+        <!-- =================================================
+             HERO
+             ================================================= -->
 
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-terminal"></i>
-                        </div>
-
-                        <div class="stat-info">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Botlar</span>
-                        </div>
-
-                    </div>
+        <section class="hero-container">
 
 
-                    <div class="stat-card">
+            <!-- TEMA RENKLERİ -->
 
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-microchip"></i>
-                        </div>
+            <div class="color-picker-wrapper">
 
-                        <div class="stat-info">
-                            <span class="stat-number">4+</span>
-                            <span class="stat-label">Yıl Deneyim</span>
-                        </div>
+                <span class="picker-label">
+                    Tema Rengi:
+                </span>
 
-                    </div>
+
+                <div class="color-dots">
+
+                    <button
+                        type="button"
+                        class="color-dot active"
+                        data-color="red"
+                        style="background-color:#ef4444"
+                        title="Kırmızı">
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="color-dot"
+                        data-color="purple"
+                        style="background-color:#a855f7"
+                        title="Mor">
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="color-dot"
+                        data-color="blue"
+                        style="background-color:#3b82f6"
+                        title="Mavi">
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="color-dot"
+                        data-color="green"
+                        style="background-color:#22c55e"
+                        title="Yeşil">
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="color-dot"
+                        data-color="orange"
+                        style="background-color:#f97316"
+                        title="Turuncu">
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="color-dot"
+                        data-color="pink"
+                        style="background-color:#ec4899"
+                        title="Pembe">
+                    </button>
 
                 </div>
 
             </div>
 
 
-            <div class="hero-right">
 
-                <div class="avatar-frame">
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+
+                <div class="hero-left">
+
+
+                    <div class="role-badge">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        <span>
+                            Junior Bot Developer
+                        </span>
+
+                    </div>
+
+
+                    <h1 class="user-title">
+                        Wolwes
+                    </h1>
+
+
+                    <h3 class="user-subtitle">
+                        Discord Bot & Web Developer
+                    </h3>
+
+
+                    <p class="user-description">
+
+                        Discord botları ve web uygulamaları
+                        geliştiriyorum.
+
+                        Kaliteli kod yapısı ve estetik kullanıcı
+                        deneyimi önceliğimdir.
+
+                    </p>
+
+
+
+                    <!-- İSTATİSTİKLER -->
+
+                    <div class="stats-container">
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </div>
+
+
+                            <div class="stat-info">
+
+                                <span class="stat-number">
+                                    15+
+                                </span>
+
+                                <span class="stat-label">
+                                    Projeler
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-terminal"></i>
+
+                            </div>
+
+
+                            <div class="stat-info">
+
+                                <span class="stat-number">
+                                    5+
+                                </span>
+
+                                <span class="stat-label">
+                                    Botlar
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-microchip"></i>
+
+                            </div>
+
+
+                            <div class="stat-info">
+
+                                <span class="stat-number">
+                                    6+
+                                </span>
+
+                                <span class="stat-label">
+                                    Yıl Deneyim
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AVATAR -->
+
+                <div class="hero-right">
+
+                    <div class="avatar-frame">
+
+                        <img
+                            src="https://i.pinimg.com/564x/2c/3e/71/2c3e7178cf53a298a005611cf746e507.jpg"
+                            alt="Wolwes Avatar"
+                            class="hero-avatar"
+                        >
+
+                        <span
+                            class="status-indicator offline"
+                            title="Discord Durumu">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISCORD CARD
+             ================================================= -->
+
+        <section class="discord-card">
+
+
+            <div class="discord-banner">
+
+                <div class="banner-overlay-text">
+                    Gözler İhanet Etmez
+                </div>
+
+            </div>
+
+
+
+            <div class="discord-profile-header">
+
+
+                <div class="discord-avatar-container">
 
                     <img
                         src="https://i.pinimg.com/564x/2c/3e/71/2c3e7178cf53a298a005611cf746e507.jpg"
+                        class="profile-avatar-img"
                         alt="Wolwes Avatar"
-                        class="hero-avatar"
                     >
 
-                    <span
-                        class="status-indicator offline"
-                        title="Discord Durumu">
-                    </span>
+                    <span class="status-indicator offline"></span>
+
+                </div>
+
+
+
+                <div class="profile-info-row">
+
+
+                    <div class="name-badge-group">
+
+                        <h2>
+                            Wolwes
+                        </h2>
+
+                        <span class="vodo-badge">
+                            BOT DEV
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="status-tag">
+
+                        <span class="username">
+                            @wolwescim
+                        </span>
+
+
+                        <span class="status-text">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            Bağlanıyor...
+
+                        </span>
+
+                    </div>
+
 
                 </div>
 
             </div>
 
-        </div>
+            <!-- HAKKINDA -->
 
-    </section>
+            <div class="discord-section">
 
-
-
-    <!-- =====================================================
-         DISCORD
-         ===================================================== -->
-
-    <section class="discord-card">
-
-        <div class="discord-banner">
-
-            <div class="banner-overlay-text">
-                Gözler İhanet Etmez
-            </div>
-
-        </div>
+                <h4>
+                    HAKKINDA
+                </h4>
 
 
-        <div class="discord-profile-header">
-
-            <div class="discord-avatar-container">
-
-                <img
-                    src="https://i.pinimg.com/564x/2c/3e/71/2c3e7178cf53a298a005611cf746e507.jpg"
-                    class="profile-avatar-img"
-                    alt="Wolwes Avatar"
-                >
-
-                <span class="status-indicator offline"></span>
-
-            </div>
-
-
-            <div class="profile-info-row">
-
-                <div class="name-badge-group">
-
-                    <h2>
-                        Wolwes
-                    </h2>
-
-                    <span class="vodo-badge">
-                        DEV
-                    </span>
-
-                </div>
-
-
-                <div class="status-tag">
-
-                    <span class="username">
-                        @wolwescim
-                    </span>
-
-                    <span class="status-text">
-
-                        <i class="fa-solid fa-circle"></i>
-
-                        Bağlanıyor...
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- ABOUT -->
-
-        <div class="discord-section">
-
-            <h4>
-                HAKKINDA
-            </h4>
-
-            <p class="about-text">
-                Discord Bot İşlemleri İçin DM ⭐
-            </p>
-
-            <a
-                href="https://wolwescim.github.io"
-                target="_blank"
-                class="highlight-link">
-                https://wolwescim.github.io
-            </a>
-
-        </div>
-
-
-
-        <!-- LINKS -->
-
-        <div class="discord-section">
-
-            <h4>
-                BAĞLANTILAR
-            </h4>
-
-
-            <div class="links-grid">
-
-                <a
-                    href="https://discord.com/users/1040583829607428146"
-                    target="_blank"
-                    class="link-btn">
-
-                    <i class="fa-brands fa-discord"></i>
-
-                    @wolwescim
-
-                </a>
-
-
-                <a
-                    href="https://github.com/wolwescim"
-                    target="_blank"
-                    class="link-btn">
-
-                    <i class="fa-brands fa-github"></i>
-
-                    wolwescim
-
-                </a>
+                <p class="about-text">
+                    Discord Bot İşlemleri İçin DM ⭐
+                </p>
 
 
                 <a
                     href="https://wolwescim.github.io"
                     target="_blank"
-                    class="link-btn active-link">
+                    class="highlight-link">
 
-                    <i class="fa-solid fa-globe"></i>
-
-                    wolwescim
-
-                </a>
-
-
-                <a
-                    href="mailto:info@wolwescim.github.io"
-                    class="link-btn">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    info@wolwescim.github.io
+                    https://wolwescim.github.io
 
                 </a>
 
             </div>
 
-        </div>
+
+
+            <!-- BAĞLANTILAR -->
+
+            <div class="discord-section">
+
+                <h4>
+                    BAĞLANTILAR
+                </h4>
+
+
+                <div class="links-grid">
+
+
+                    <a
+                        href="https://discord.com/users/1040583829607428146"
+                        target="_blank"
+                        class="link-btn">
+
+                        <i class="fa-brands fa-discord"></i>
+
+                        @wolwescim
+
+                    </a>
+
+
+
+                    <a
+                        href="https://github.com/wolwescim"
+                        target="_blank"
+                        class="link-btn">
+
+                        <i class="fa-brands fa-github"></i>
+
+                        wolwescim
+
+                    </a>
+
+
+
+                    <a
+                        href="https://wolwes.github.io"
+                        target="_blank"
+                        class="link-btn active-link">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        wolwescim
+
+                    </a>
+
+
+
+                    <a
+                        href="mailto:info@wolwes.github.io"
+                        class="link-btn">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        info@wolwes.github.io
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SPOTIFY
+                 ================================================= -->
+
+            <div class="activity-box spotify-box">
+
+                <div class="activity-title">
+
+                    <i class="fa-brands fa-spotify spotify-icon"></i>
+
+                    SPOTIFY
+
+                    <span
+                        id="spotify-status-dot"
+                        class="live-dot">
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="spotify-activity"
+                    class="activity-desc">
+
+                    Spotify kontrol ediliyor...
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 AKTİVİTE
+                 ================================================= -->
+
+            <div class="activity-box game-box">
+
+                <div class="activity-title">
+
+                    <i class="fa-solid fa-gamepad game-icon"></i>
+
+                    AKTİVİTE
+
+                    <span
+                        id="activity-status-dot"
+                        class="live-dot">
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="game-activity"
+                    class="activity-desc">
+
+                    Aktivite kontrol ediliyor...
+
+                </div>
+
+            </div>
+
+
+        </section>
 
 
 
         <!-- =================================================
-             SPOTIFY
+             TEKNOLOJİLER
              ================================================= -->
 
-        <div class="activity-box spotify-box">
+        <section class="section-container">
 
-            <div class="activity-title">
-
-                <i class="fa-brands fa-spotify spotify-icon"></i>
-
-                SPOTIFY
-
-                <span
-                    id="spotify-status-dot"
-                    class="live-dot">
-                </span>
-
-            </div>
-
-
-            <div
-                id="spotify-activity"
-                class="activity-desc">
-
-                Spotify kontrol ediliyor...
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACTIVITY
-             ================================================= -->
-
-        <div class="activity-box game-box">
-
-            <div class="activity-title">
-
-                <i class="fa-solid fa-gamepad game-icon"></i>
-
-                AKTİVİTE
-
-                <span
-                    id="activity-status-dot"
-                    class="live-dot">
-                </span>
-
-            </div>
-
-
-            <div
-                id="game-activity"
-                class="activity-desc">
-
-                Aktivite kontrol ediliyor...
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         TECHNOLOGIES
-         ===================================================== -->
-
-    <section class="section-container">
-
-        <div class="section-title-box">
-
-            <div class="section-icon">
-                <i class="fa-solid fa-fire"></i>
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Teknolojiler
-                </h3>
-
-                <p>
-                    Kullandığım diller ve geliştirme araçları
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="tech-grid">
-
-            <a
-                href="https://nodejs.org/"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-brands fa-node-js"></i>
-
-                <span>
-                    Node.js
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://www.python.org/"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-brands fa-python"></i>
-
-                <span>
-                    Python
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-brands fa-html5"></i>
-
-                <span>
-                    HTML5
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-brands fa-css3-alt"></i>
-
-                <span>
-                    CSS3
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-brands fa-js"></i>
-
-                <span>
-                    JavaScript
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                class="tech-item">
-
-                <span class="ts-text">
-                    TS
-                </span>
-
-                <span>
-                    TypeScript
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://www.mongodb.com/"
-                target="_blank"
-                class="tech-item">
-
-                <i class="fa-solid fa-database"></i>
-
-                <span>
-                    MongoDB
-                </span>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROJECTS
-         ===================================================== -->
-
-    <section class="section-container">
-
-        <div class="section-header-flex">
 
             <div class="section-title-box">
 
+
                 <div class="section-icon">
-                    <i class="fa-solid fa-code"></i>
+
+                    <i class="fa-solid fa-fire"></i>
+
                 </div>
 
 
                 <div>
 
                     <h3>
-
-                        Projelerim
-
-                        <span class="count-badge">
-                            (Yakında)
-                        </span>
-
+                        Teknolojiler
                     </h3>
 
-
                     <p>
-                        Geliştirdiğim ve geliştireceğim projeler
+                        Kullandığım diller ve geliştirme araçları
                     </p>
 
                 </div>
 
+
             </div>
 
-        </div>
 
 
-
-        <div class="projects-grid">
-
-
-            <!-- PROJE 1 -->
-
-            <div class="project-card coming-soon">
-
-                <div class="project-header">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h4>
-                        Eklenecek
-                    </h4>
-
-                </div>
+            <div class="tech-grid">
 
 
-                <p class="project-desc">
-                    Yeni projem yakında burada olacak.
-                </p>
+                <a
+                    href="https://nodejs.org/"
+                    target="_blank"
+                    class="tech-item">
 
+                    <i class="fa-brands fa-node-js"></i>
 
-                <div class="project-footer">
-
-                    <span class="lang-tag">
-
-                        <i class="fa-solid fa-hourglass-half"></i>
-
-                        Yakında
-
+                    <span>
+                        Node.js
                     </span>
 
-                </div>
-
-            </div>
+                </a>
 
 
 
-            <!-- PROJE 2 -->
+                <a
+                    href="https://www.python.org/"
+                    target="_blank"
+                    class="tech-item">
 
-            <div class="project-card coming-soon">
+                    <i class="fa-brands fa-python"></i>
 
-                <div class="project-header">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h4>
-                        Eklenecek
-                    </h4>
-
-                </div>
-
-
-                <p class="project-desc">
-                    Yeni projem yakında burada olacak.
-                </p>
-
-
-                <div class="project-footer">
-
-                    <span class="lang-tag">
-
-                        <i class="fa-solid fa-hourglass-half"></i>
-
-                        Yakında
-
+                    <span>
+                        Python
                     </span>
 
-                </div>
-
-            </div>
+                </a>
 
 
 
-            <!-- PROJE 3 -->
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                    target="_blank"
+                    class="tech-item">
 
-            <div class="project-card coming-soon">
+                    <i class="fa-brands fa-html5"></i>
 
-                <div class="project-header">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h4>
-                        Eklenecek
-                    </h4>
-
-                </div>
-
-
-                <p class="project-desc">
-                    Yeni projem yakında burada olacak.
-                </p>
-
-
-                <div class="project-footer">
-
-                    <span class="lang-tag">
-
-                        <i class="fa-solid fa-hourglass-half"></i>
-
-                        Yakında
-
+                    <span>
+                        HTML5
                     </span>
 
-                </div>
-
-            </div>
+                </a>
 
 
 
-            <!-- PROJE 4 -->
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                    target="_blank"
+                    class="tech-item">
 
-            <div class="project-card coming-soon">
+                    <i class="fa-brands fa-css3-alt"></i>
 
-                <div class="project-header">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h4>
-                        Eklenecek
-                    </h4>
-
-                </div>
-
-
-                <p class="project-desc">
-                    Yeni projem yakında burada olacak.
-                </p>
-
-
-                <div class="project-footer">
-
-                    <span class="lang-tag">
-
-                        <i class="fa-solid fa-hourglass-half"></i>
-
-                        Yakında
-
+                    <span>
+                        CSS3
                     </span>
 
-                </div>
-
-            </div>
+                </a>
 
 
 
-            <!-- PROJE 5 -->
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                    target="_blank"
+                    class="tech-item">
 
-            <div class="project-card coming-soon">
+                    <i class="fa-brands fa-js"></i>
 
-                <div class="project-header">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                    <h4>
-                        Eklenecek
-                    </h4>
-
-                </div>
-
-
-                <p class="project-desc">
-                    Yeni projem yakında burada olacak.
-                </p>
-
-
-                <div class="project-footer">
-
-                    <span class="lang-tag">
-
-                        <i class="fa-solid fa-hourglass-half"></i>
-
-                        Yakında
-
+                    <span>
+                        JavaScript
                     </span>
 
-                </div>
+                </a>
+
+
+
+                <a
+                    href="https://www.typescriptlang.org/"
+                    target="_blank"
+                    class="tech-item">
+
+                    <span class="ts-text">
+                        TS
+                    </span>
+
+                    <span>
+                        TypeScript
+                    </span>
+
+                </a>
+
+
+
+                <a
+                    href="https://www.mongodb.com/"
+                    target="_blank"
+                    class="tech-item">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <span>
+                        MongoDB
+                    </span>
+
+                </a>
+
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+
+<!-- =================================================
+             PROJELER
+             ================================================= -->
+
+        <section class="section-container">
+
+
+            <div class="section-header-flex">
+
+
+                <div class="section-title-box">
+
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Projelerim
+
+                            <span class="count-badge">
+                                (Yakında)
+                            </span>
+
+                        </h3>
+
+
+                        <p>
+                            Geliştirdiğim ve geliştireceğim projeler
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJE 1 -->
+
+                <div class="project-card coming-soon">
+
+                    <div class="project-header">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h4>
+                            Eklenecek
+                        </h4>
+
+                    </div>
+
+
+                    <p class="project-desc">
+                        Yeni projem yakında burada olacak.
+                    </p>
+
+
+                    <div class="project-footer">
+
+                        <span class="lang-tag">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Yakında
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJE 2 -->
+
+                <div class="project-card coming-soon">
+
+                    <div class="project-header">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h4>
+                            Eklenecek
+                        </h4>
+
+                    </div>
+
+
+                    <p class="project-desc">
+                        Yeni projem yakında burada olacak.
+                    </p>
+
+
+                    <div class="project-footer">
+
+                        <span class="lang-tag">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Yakında
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJE 3 -->
+
+                <div class="project-card coming-soon">
+
+                    <div class="project-header">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h4>
+                            Eklenecek
+                        </h4>
+
+                    </div>
+
+
+                    <p class="project-desc">
+                        Yeni projem yakında burada olacak.
+                    </p>
+
+
+                    <div class="project-footer">
+
+                        <span class="lang-tag">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Yakında
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJE 4 -->
+
+                <div class="project-card coming-soon">
+
+                    <div class="project-header">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h4>
+                            Eklenecek
+                        </h4>
+
+                    </div>
+
+
+                    <p class="project-desc">
+                        Yeni projem yakında burada olacak.
+                    </p>
+
+
+                    <div class="project-footer">
+
+                        <span class="lang-tag">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Yakında
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJE 5 -->
+
+                <div class="project-card coming-soon">
+
+                    <div class="project-header">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <h4>
+                            Eklenecek
+                        </h4>
+
+                    </div>
+
+
+                    <p class="project-desc">
+                        Yeni projem yakında burada olacak.
+                    </p>
+
+
+                    <div class="project-footer">
+
+                        <span class="lang-tag">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                            Yakında
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+        
+        <!-- =================================================
+             KODLAMA YÜZDELERİ
+             ================================================= -->
+
+        <section class="section-container">
+
+
+            <div class="section-title-box">
+
+
+                <div class="section-icon">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Kodlama
+                    </h3>
+
+                    <p>
+                        Kullandığım teknolojiler ve seviyeler
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="coding-list">
+
+
+                <!-- JAVASCRIPT -->
+
+                <div class="coding-item">
+
+                    <div class="coding-top">
+
+                        <span>
+
+                            <i class="fa-brands fa-js"></i>
+
+                            JavaScript
+
+                        </span>
+
+
+                        <strong>
+                            80%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coding-bar">
+
+                        <div
+                            class="coding-progress"
+                            data-width="80">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TYPESCRIPT -->
+
+                <div class="coding-item">
+
+                    <div class="coding-top">
+
+                        <span>
+
+                            <span class="coding-ts">
+                                TS
+                            </span>
+
+                            TypeScript
+
+                        </span>
+
+
+                        <strong>
+                            70%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coding-bar">
+
+                        <div
+                            class="coding-progress"
+                            data-width="70">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PYTHON -->
+
+                <div class="coding-item">
+
+                    <div class="coding-top">
+
+                        <span>
+
+                            <i class="fa-brands fa-python"></i>
+
+                            Python
+
+                        </span>
+
+
+                        <strong>
+                            70%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coding-bar">
+
+                        <div
+                            class="coding-progress"
+                            data-width="70">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HTML -->
+
+                <div class="coding-item">
+
+                    <div class="coding-top">
+
+                        <span>
+
+                            <i class="fa-brands fa-html5"></i>
+
+                            HTML
+
+                        </span>
+
+
+                        <strong>
+                            85%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coding-bar">
+
+                        <div
+                            class="coding-progress"
+                            data-width="85">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CSS -->
+
+                <div class="coding-item">
+
+                    <div class="coding-top">
+
+                        <span>
+
+                            <i class="fa-brands fa-css3-alt"></i>
+
+                            CSS
+
+                        </span>
+
+
+                        <strong>
+                            80%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="coding-bar">
+
+                        <div
+                            class="coding-progress"
+                            data-width="80">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- =================================================
+             ZİYARETÇİ SAYACI
+             ================================================= -->
+
+        <section class="visitor-section">
+
+
+            <div class="visitor-card">
+
+
+                <div class="visitor-icon">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+
+                <div class="visitor-info">
+
+                    <span class="visitor-label">
+                        TOPLAM ZİYARET
+                    </span>
+
+
+                    <strong id="visitor-count">
+                        Yükleniyor...
+                    </strong>
+
+                </div>
+
+
+                <div class="visitor-live">
+
+                    <span></span>
+
+                    LIVE
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="site-footer">
+
+
+            <div class="footer-left">
+
+
+                <div class="footer-avatar">
+
+                    &lt;/&gt;
+
+                </div>
+
+
+                <div>
+
+
+                    <div class="footer-name">
+
+                        Wolwes
+
+                        <span class="footer-dot">
+                            •
+                        </span>
+
+
+                        <a
+                            href="https://wolwescim.github.io"
+                            class="footer-link">
+
+                            wolwescim.github.io
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="footer-sub">
+
+                        Junior Bot Developer
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-socials">
+
+
+                <a
+                    href="https://discord.com/users/1040583829607428146"
+                    target="_blank">
+
+                    <i class="fa-brands fa-discord"></i>
+
+                </a>
+
+
+                <a
+                    href="https://github.com/wolwescim"
+                    target="_blank">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="mailto:info@wolwescim.github.io">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="footer-copyright">
+
+                © 2026 Wolwes
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
 
 
 
     <!-- =====================================================
-         FOOTER
+         JAVASCRIPT
          ===================================================== -->
 
-    <footer class="site-footer">
+    <script src="script.js"></script>
 
-
-        <div class="footer-left">
-
-            <div class="footer-avatar">
-                &lt;/&gt;
-            </div>
-
-
-            <div>
-
-                <div class="footer-name">
-
-                    Wolwes
-
-                    <span class="footer-dot">
-                        •
-                    </span>
-
-
-                    <a
-                        href="https://wolwes.github.io"
-                        class="footer-link">
-
-                        wolwes.github.io
-
-                    </a>
-
-                </div>
-
-
-                <div class="footer-sub">
-                    Junior Bot Dev — Developed ❤️ By Wolwes
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="footer-socials">
-
-            <a
-                href="https://discord.com/users/1040583829607428146"
-                target="_blank">
-
-                <i class="fa-brands fa-discord"></i>
-
-            </a>
-
-
-            <a
-                href="https://github.com/wolwescim"
-                target="_blank">
-
-                <i class="fa-brands fa-github"></i>
-
-            </a>
-
-
-            <a
-                href="mailto:info@wolwes.github.io">
-
-                <i class="fa-solid fa-envelope"></i>
-
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-copyright">
-
-            © 2026 Wolwes
-
-        </div>
-
-    </footer>
-
-</div>
-
-
-
-<!-- JavaScript -->
-
-<script src="script.js"></script>
 
 </body>
+
 </html>
