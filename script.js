@@ -649,3 +649,181 @@ document.addEventListener('DOMContentLoaded', () => {
     connectLanyard();
 
 });
+
+// =========================================================
+// AÇILIŞ ANİMASYONU
+// =========================================================
+
+function startLoadingAnimation() {
+
+    const loadingScreen =
+        document.getElementById('loading-screen');
+
+    const progress =
+        document.querySelector('.loading-progress');
+
+    const percent =
+        document.getElementById('loading-percent');
+
+
+    if (!loadingScreen || !progress || !percent) {
+        return;
+    }
+
+
+    let value = 0;
+
+
+    const interval = setInterval(() => {
+
+        value += Math.floor(
+            Math.random() * 8
+        ) + 3;
+
+
+        if (value >= 100) {
+
+            value = 100;
+
+            clearInterval(interval);
+
+
+            setTimeout(() => {
+
+                loadingScreen.classList.add(
+                    'hidden'
+                );
+
+                startCodingAnimations();
+
+            }, 400);
+
+        }
+
+
+        progress.style.width =
+            `${value}%`;
+
+        percent.textContent =
+            value;
+
+    }, 70);
+
+}
+
+
+// =========================================================
+// KODLAMA YÜZDE ANİMASYONU
+// =========================================================
+
+function startCodingAnimations() {
+
+    const bars =
+        document.querySelectorAll(
+            '.coding-progress'
+        );
+
+
+    bars.forEach((bar, index) => {
+
+        const width =
+            bar.dataset.width || 0;
+
+
+        setTimeout(() => {
+
+            bar.style.width =
+                `${width}%`;
+
+        }, index * 120);
+
+    });
+
+}
+
+
+// =========================================================
+// GERÇEK ZİYARETÇİ SAYACI
+// =========================================================
+
+async function updateVisitorCounter() {
+
+    const counter =
+        document.getElementById(
+            'visitor-count'
+        );
+
+
+    if (!counter) {
+        return;
+    }
+
+
+    try {
+
+        /*
+         * CounterAPI ücretsiz ziyaretçi sayacı.
+         *
+         * Aynı URL'ye her ziyaret geldiğinde
+         * counter otomatik olarak +1 olur.
+         */
+
+        const response =
+            await fetch(
+                'https://api.counterapi.dev/v1/wolwes-portfolio/visits/up'
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `HTTP ${response.status}`
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data &&
+            typeof data.count !== 'undefined'
+        ) {
+
+            counter.textContent =
+                Number(data.count).toLocaleString(
+                    'tr-TR'
+                );
+
+        } else {
+
+            counter.textContent =
+                '0';
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            'Ziyaretçi sayacı hatası:',
+            error
+        );
+
+
+        counter.textContent =
+            '—';
+
+    }
+
+}
+
+
+// =========================================================
+// BAŞLAT
+// =========================================================
+
+startLoadingAnimation();
+
+updateVisitorCounter();
